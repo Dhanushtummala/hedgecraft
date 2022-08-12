@@ -1,0 +1,34 @@
+#sidebar {
+    background-image: linear-gradient(220deg, #4e73df 40%, #224abe 120%);
+    background-size: cover;
+}
+
+
+
+.sidebar-subcomponents:hover{
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+    color: #ffffff;
+}
+
+.sidebar-subcomponents a{
+    color: aqua;
+}
+
+#title-side{
+    font-family: 'Nunito';
+}
+
+.active-link{
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+    color: #ffffff;
+}
+
+.inactive-link{
+    color: #a6a6a6;
+}
+
+
