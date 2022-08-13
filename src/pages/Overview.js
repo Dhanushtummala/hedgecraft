@@ -16,13 +16,6 @@ const Overview = () => {
 
   const dispatch = useDispatch()
 
-  function handleClick(){
-    let temp = document.getElementById('text').value;
-    {temp && dispatch(addsub(({
-      tk: temp
-    })))}
-  }
-
   return (
     <div className='flex mt-10 ml-5 justify-center'>
       <div className='flex-col'>

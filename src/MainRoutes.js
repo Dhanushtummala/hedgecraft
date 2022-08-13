@@ -11,6 +11,7 @@ import Trade from './pages/Trade';
 import Holdings from './pages/Holdings';
 import DeltaStrangles from './pages/DeltaStrangles';
 import NotAvail from './pages/NotAvail';
+import Modifyclients from './pages/Modifyclients';
 
 function MainRoutes() {
   
@@ -29,6 +30,7 @@ function MainRoutes() {
                   <Route path="positions" element={<Positions />} />
                   <Route path="trade" element={<Trade />} />
                   <Route path="deltastrangles" element={<DeltaStrangles />} />
+                  <Route path="modifyclients" element={<Modifyclients />} />
                   <Route path="*" element={<NotAvail />} />
                 </Route>
             </Route>

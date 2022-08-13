@@ -1,18 +1,17 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux/es/exports'
+import { updateholdings, updatepostions, updatedata } from '../redux/redusers/userSlice'
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { updateholdings, updatepostions } from '../redux/redusers/userSlice';
+
 
 const Request = () => {
-
     let dispatch = useDispatch()
 
     useEffect(() => {
         axios.post('http://192.168.0.118:8000/holdings').then(res => dispatch(updateholdings(res.data)))
         axios.post('http://192.168.0.118:8000/positionbook').then(res => dispatch(updatepostions(res.data)))
-      },[])
-
-
+        axios.post('http://192.168.0.118:8000/data').then(res => dispatch(updatedata(res.data)))
+    },[])
   return (
     <div></div>
   )

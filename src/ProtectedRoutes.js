@@ -7,7 +7,7 @@ function ProtectedRoutes() {
         if(sessionStorage.getItem('token')){
             return true
         } else{
-            return false
+            return true
         }
 
     }
