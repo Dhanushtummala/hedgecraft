@@ -8,9 +8,9 @@ const Request = () => {
     let dispatch = useDispatch()
 
     useEffect(() => {
-        axios.post('http://192.168.0.118:8000/holdings').then(res => dispatch(updateholdings(res.data)))
-        axios.post('http://192.168.0.118:8000/positionbook').then(res => dispatch(updatepostions(res.data)))
-        axios.post('http://192.168.0.118:8000/data').then(res => dispatch(updatedata(res.data)))
+        axios.get('http://192.168.0.118:8000/holdings').then(res => dispatch(updateholdings(res.data)))
+        axios.get('http://192.168.0.118:8000/positionbook').then(res => dispatch(updatepostions(res.data)))
+        axios.get('http://192.168.0.118:8000/data').then(res => dispatch(updatedata(res.data)))
     },[])
   return (
     <div></div>

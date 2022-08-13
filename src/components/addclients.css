@@ -1,0 +1,21 @@
+
+.outer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    top: 0px;
+    overflow: hidden;
+    z-index: 1000;
+   
+    
+}
+
+.addclient-popup{
+    position: relative;
+    top: 50px;
+    background-color: white;
+    
+}
