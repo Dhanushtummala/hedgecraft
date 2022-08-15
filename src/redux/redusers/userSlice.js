@@ -114,7 +114,7 @@ const initialState = {
             'type': 'boolean',
             'editable': 'true'
           }
-        ]]
+        ],[]]
 
     }
 
@@ -130,7 +130,10 @@ const userSlice = createSlice({
     updatepostions: (state,action) => {
       state.value.positions.push(action.payload)
     },
-    updatedata: (state,action) => {
+    updateclientdata: (state,action) => {
+
+      state.value.data.pop()
+
       state.value.data.push(action.payload.map(x => {
         return {
           ...x,
@@ -143,6 +146,6 @@ const userSlice = createSlice({
   }
 });
 
-export const {updateholdings, updatepostions, updatedata} = userSlice.actions
+export const {updateholdings, updatepostions, updateclientdata} = userSlice.actions
 
 export default userSlice.reducer

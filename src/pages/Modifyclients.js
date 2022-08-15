@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { DataGrid, GridRowModes, GridToolbar } from '@mui/x-data-grid';
-import Box from '@mui/material/Box';
 import { useSelector } from 'react-redux';
 import './css/modifyclient.css'
 import { TextField, Select, MenuItem, InputLabel, Button } from '@mui/material';
-import AddClient from '../components/AddClient';
 import { useDispatch } from 'react-redux/es/exports'
-import { popup_update } from '../redux/redusers/uiSlice';
+import {addclient_popup_update,deleteclient_popup_update } from '../redux/redusers/uiSlice';
+
 
 
 function handleClick(event){
@@ -23,13 +22,17 @@ const Modifyclients = () => {
 
   const dataredux = useSelector((state) => state.userdata.value)
   const uistate = useSelector((state) => state.uistate.value)
+
+  useEffect(() => {
+    console.log('clientdatabase changed')
+  },[dataredux.data])
   
   return (
     <div className='flex-col'>
     <div className='mt-5 px-5 h-96'>
     <div className='flex justify-end mr-5 mb-7 gap-4 h-5'>
-      <div><Button variant="contained" color="success" onClick={() => {dispatch(popup_update())}}>Add Client</Button></div>
-      <div><Button variant="contained" color="error">Delete Client</Button></div>
+      <div><Button variant="contained" color="success" onClick={() => {dispatch(addclient_popup_update())}}>Add Client</Button></div>
+      <div><Button variant="contained" color="error" onClick={() => {dispatch(deleteclient_popup_update())}}>Delete Client</Button></div>
     </div>
       <div className=''>
       <DataGrid
@@ -58,7 +61,6 @@ const Modifyclients = () => {
     </div>
 
     </div>
-    
     </div>
   )
 }

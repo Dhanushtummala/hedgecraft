@@ -20,6 +20,8 @@ const socketSlice = createSlice({
     },
 
     updatedata: (state, action) => {
+
+
         state.value.quantdata = state.value.quantdata.map(x => (
             
             {
